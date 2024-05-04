@@ -7,6 +7,8 @@ Here is a list of supported environment variables used by `backend/config.py` in
 | Environment Variable              | App/Backend                                                                                                      |
 | --------------------------------- | ---------------------------------------------------------------------------------------------------------------- |
 | `AUTOMATIC1111_BASE_URL`          | URL to Automatic1111's Stable Diffusion API.                                                                     |
+| `CHUNK_SIZE`                      | Sets the chunk size. Default is 1500.                                                                            |
+| `CHUNK_OVERLAP`                   | Sets the chunk overlap. Default is 100.                                                                          |
 | `COMFYUI_BASE_URL`                | URL to ComfyUI image generation API.                                                                             |
 | `CUSTOM_NAME`                     | Sets `WEBUI_NAME` but polls _api.openwebui.com_ for metadata                                                     |
 | `DATA_DIR`                        | Specifies the base directory for data storage, including uploads, cache, vector database, etc, default: `./data` |
@@ -17,8 +19,12 @@ Here is a list of supported environment variables used by `backend/config.py` in
 | `ENABLE_SIGNUP`                   | Toggle user account creation, default: `"True"`                                                                  |
 | `ENV`                             | Environment setting, default: `"dev"`                                                                            |
 | `FRONTEND_BUILD_DIR`              | Location of the built frontend files, default: `../build`                                                        |
+| `IMAGES_GENERATION_ENGINE`        | Select the image generation engine. Options: openai, ollama, comfyul.                                            |
+| `IMAGES_MODEL`                    | Selects the image model.                                                                                         |
+| `IMAGE_SIZE`                      | Sets the image size. Default is 512x512.                                                                         |
+| `IMAGE_STEPS`                     | Sets the image steps. Default is 50.                                                                             |
 | `K8S_FLAG`                        | Support Kubernetes style Ollama hostname `.svc.cluster.local`                                                    |
-| `ENABLE_MODEL_FILTER`            | Toggle Language Model filtering, default: `"False"`                                                              |
+| `ENABLE_MODEL_FILTER`             | Toggle Language Model filtering, default: `"False"`                                                              |
 | `MODEL_FILTER_LIST`               | Set Language Model filter list, semicolon separated: `"llama3:instruct;gemma:instruct"`                          |
 | `OLLAMA_API_BASE_URL`             | Deprecated, see `OLLAMA_BASE_URL`                                                                                |
 | `OLLAMA_BASE_URL`                 | Configure Ollama backend URL, default: `"http://localhost:11434"`                                                |
@@ -27,6 +33,7 @@ Here is a list of supported environment variables used by `backend/config.py` in
 | `OPENAI_API_BASE_URLS`            | Support balanced OpenAI base API URLs, semicolon separated: `"http://host-one:11434;http://host-two:11434"`      |
 | `OPENAI_API_KEY`                  | Set OpenAI API key                                                                                               |
 | `OPENAI_API_KEYS`                 | Support multiple Open API keys                                                                                   |
+| `PDF_EXTRACT_IMAGES`              | Toggles whether to enable OCR for recognizing PDF.                                                               |
 | `PORT`                            | Port to run Open WebUI from, default: `8080`                                                                     |
 | `RAG_EMBEDDING_MODEL_AUTO_UPDATE` | Toggle automatic update of the Sentence-Transformer model, default: `False`                                      |
 | `RAG_EMBEDDING_MODEL`             | Configure a Sentence-Transformer model, default: `"all-MiniLM-L6-v2"`                                            |
